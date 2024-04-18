@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Mobile Phone Lookup</h1>
+    <img src="images/400x400.jpg" alt="400x400.jpg" onclick="showMessage()">
+    <img src="images/mobile2.jpg" alt="Mobile2" onclick="showMessage()">
+    <img src="images/mobile3.jpg" alt="Mobile3" onclick="showMessage()">
+
+    <hr>
+
+    <table id="studentTable">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Name</th>
+                <th>Grade</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>A</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>B</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+            <!-- Add more rows as needed -->
+            <tr>
+                <td>3</td>
+                <td>Michael Johnson</td>
+                <td>C</td>
+                <td><button onclick="deleteRow(this)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <img id="myImage" src="images/mobile2.jpg" onmouseover="changeImage('images/mobile3.jpg')" onmouseout="restoreImage()">
+
+    <hr>
+
+    
+    <h1>Counter: <span id="counterDisplay">0</span></h1>
+    <button onclick="increaseCounter()">Increase</button>
+    <button onclick="decreaseCounter()">Decrease</button>
+
+
+    <hr>
+
+
+    <h2>Signup Form</h2>
+
+    <form onsubmit="displayFormData(); return false;">
+        <label for="firstName">First Name:</label><br>
+        <input type="text" id="firstName" name="firstName"><br><br>
+
+        <label for="lastName">Last Name:</label><br>
+        <input type="text" id="lastName" name="lastName"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password"><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div id="formDataDisplay"></div>
+
+    <hr>
+
+    <h2>Item Name</h2>
+    <p>Short description of the item...</p>
+
+    <!-- Button to show full details -->
+    <button onclick="showFullDetails()">Read more</button>
+
+    <!-- Full details (initially hidden) -->
+    <div class="full-details" id="fullDetails">
+        <h3>Full Details</h3>
+        <p>All the details of the item...</p>
+        <p>More information...</p>
+    </div>
+
+    <hr>
+
+    
+    <h2>Add Student</h2>
+    <form onsubmit="addStudent(); return false;">
+        <label for="studentName">Name:</label>
+        <input type="text" id="studentName" required><br><br>
+        
+        <label for="studentAge">Age:</label>
+        <input type="number" id="studentAge" required><br><br>
+
+        <label for="studentGrade">Grade:</label>
+        <input type="text" id="studentGrade" required><br><br>
+
+        <input type="submit" value="Add Student">
+    </form>
+
+    <h2>Student Details</h2>
+    <table border="1" id="studentTable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Student details will be displayed here -->
+        </tbody>
+    </table>
+
+    <!-- Edit form -->
+    <div id="editForm">
+        <h2>Edit Student</h2>
+        <form onsubmit="saveEditedStudent(); return false;">
+            <input type="hidden" id="editIndex">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" required><br><br>
+            
+            <label for="editAge">Age:</label>
+            <input type="number" id="editAge" required><br><br>
+
+            <label for="editGrade">Grade:</label>
+            <input type="text" id="editGrade" required><br><br>
+
+            <input type="submit" value="Save">
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
